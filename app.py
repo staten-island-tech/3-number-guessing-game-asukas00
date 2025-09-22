@@ -1,2 +1,3 @@
 import random
-random.number = 10
+
+random.randint(1,100)
