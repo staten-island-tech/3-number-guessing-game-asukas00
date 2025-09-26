@@ -1,18 +1,23 @@
 import random
 
-answer = random.randint(1,10)
-print("guess a number between 1-10")
+answer = random.randint(1,100)
+print("guess a number between 1-100")
 attempt = 0
-guess = int(input("Enter a number"))
+guess_history = []
 while True:
-    
-    if guess > answer:
-        print("your number is too high")
-        attempt += 1
-    elif guess < answer:
-        print("your number is too low")
-        attempt += 1
-    else:
-        attempt += 1
-        print("You got it in {attempts}!")
-        break
+        guess = int(input("Enter your guess: "))
+        
+        if guess < answer:
+            print("Too low. Try again.")
+            attempt += 1
+            guess_history.append(guess)
+        elif guess > answer:
+            print("Too high. Try again.")
+            attempt += 1
+            guess_history.append(guess)
+        else:
+            attempt += 1
+            print(f"YAY! you got it in {attempt} attempts!")
+            guess_history.append(guess)
+            print(guess_history)
+            break
