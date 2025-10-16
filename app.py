@@ -1,7 +1,7 @@
 import random
 
-answer = random.randint(1,10000)
-print("guess a number between 1-10000")
+answer = random.randint(1,100)
+print("guess a number between 1-100")
 attempt = 0
 guess_history = []
 while True:
